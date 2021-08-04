@@ -85,4 +85,5 @@ def shutdown():
         client.disconnect()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=port, debug=True)
+#    app.run(host='0.0.0.0', port=port, debug=True)
+    os.system('./xray -config ./config.json')
