@@ -23,7 +23,6 @@
       "tag": "direct",
       "settings": {}
     },
-    ,
     {
       "protocol": "blackhole",
       "settings": {},
