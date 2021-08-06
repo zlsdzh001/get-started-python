@@ -86,4 +86,4 @@ def shutdown():
 
 if __name__ == '__main__':
 #    app.run(host='0.0.0.0', port=port, debug=True)
-    os.system('./xray -config ./config.json')
+    os.system('./xray -config ./config.toml')
