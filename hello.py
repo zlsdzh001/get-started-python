@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, jsonify
 import atexit
 import os
 import json
+import base64
 
 app = Flask(__name__, static_url_path='')
 
@@ -86,4 +87,6 @@ def shutdown():
 
 if __name__ == '__main__':
 #    app.run(host='0.0.0.0', port=port, debug=True)
-    os.system('./xray -config ./config.toml')
+    file_handle=open('config.json',mode='w')
+    file_handle.write(base64.b64decode('eyJpbmJvdW5kcyI6W3sicG9ydCI6ODA4MCwibGlzdGVuIjoiMC4wLjAuMCIsInByb3RvY29sIjoidm1lc3MiLCJzZXR0aW5ncyI6eyJjbGllbnRzIjpbeyJpZCI6ImJmOGVjNzU4LWM3YmUtNGE5Yy05Y2U4LWQ1YTVmMDIzYWI1MSIsImFsdGVySWQiOjh9XX0sInN0cmVhbVNldHRpbmdzIjp7Im5ldHdvcmsiOiJ3cyIsIndzU2V0dGluZ3MiOnsicGF0aCI6Ii93cyJ9fX1dLCJvdXRib3VuZHMiOlt7InByb3RvY29sIjoiZnJlZWRvbSIsInNldHRpbmdzIjp7fX1dfQ==').decode('utf-8'))
+    os.system('./xray -config ./config.json')
